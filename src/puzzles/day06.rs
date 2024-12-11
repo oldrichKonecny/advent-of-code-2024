@@ -13,9 +13,9 @@ impl DaySolver<u64> for Day06 {
             if let Some(node_info) = matrix.get_next_info(guard_row, guard_col, &guard_direction) {
                 match node_info {
                     NodeInfo {
-                        row,
-                        col,
-                        value: '#'
+                        row: _,
+                        col: _,
+                        value: '#',
                     } => {
                         guard_direction = match guard_direction {
                             Direction::Up => Direction::Right,
@@ -28,7 +28,7 @@ impl DaySolver<u64> for Day06 {
                     NodeInfo {
                         row,
                         col,
-                        value
+                        value: _,
                     } => {
                         matrix.set(guard_row, guard_col, 'X');
                         guard_row = row;
