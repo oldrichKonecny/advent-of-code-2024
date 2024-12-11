@@ -132,7 +132,7 @@ fn input_file(day_number: u32, test_input: bool) -> Result<File, Error> {
 fn download_and_save_input(day_number: u32) -> Result<(), Error> {
     let input_url = format!("https://adventofcode.com/2024/day/{}/input", day_number);
     let client = reqwest::blocking::Client::new();
-    let session = std::io::read_to_string("session.txt")?;
+    let session = std::fs::read_to_string("session_secret")?;
     let response = client.get(&input_url)
         .header("Cookie", format!("session={}", session))
         .send()?;
