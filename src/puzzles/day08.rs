@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::fmt::Display;
 use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
-use crate::utils::matrix::{Matrix, NodeInfo};
+use crate::utils::matrix::Matrix;
 
 pub struct Day08;
 

@@ -1,7 +1,5 @@
 use std::cmp::Ordering;
-use std::fmt::Display;
 use anyhow::Error;
-use log::debug;
 use crate::base::generic_solver::{DaySolver, Input};
 
 pub struct Day02;

@@ -1,7 +1,6 @@
-use std::fmt::Display;
 use std::fs::File;
 use std::io::{Read, Write};
-use anyhow::{format_err, Error};
+use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
 use crate::puzzles::day01::Day01;
 use crate::puzzles::day02::Day02;

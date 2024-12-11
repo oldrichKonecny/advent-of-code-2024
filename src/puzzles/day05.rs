@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::fmt::Display;
 use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
 

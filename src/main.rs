@@ -3,7 +3,6 @@ use std::time::Instant;
 use log::{error, info};
 use crate::base::day_marker::DayMarker;
 use crate::base::generic_solver::{DaySolver, Input};
-use crate::puzzles::*;
 extern crate pretty_env_logger;
 
 mod base;

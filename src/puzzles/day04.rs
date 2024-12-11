@@ -1,8 +1,4 @@
-use std::fmt::Display;
-use std::process::id;
-use std::str::Chars;
 use anyhow::Error;
-use log::debug;
 use crate::base::generic_solver::{DaySolver, Input};
 use crate::utils::matrix::{Direction, Matrix};
 

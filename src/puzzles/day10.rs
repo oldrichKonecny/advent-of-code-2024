@@ -1,4 +1,3 @@
-use std::fmt::{Display, Formatter};
 use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
 use crate::utils::matrix::{Direction, Matrix};
@@ -7,7 +6,7 @@ pub struct Day10;
 
 impl DaySolver<u64> for Day10 {
     fn solve_first(&self, input: &Input) -> Result<u64, Error> {
-        let mut matrix = parse_input(input);
+        let matrix = parse_input(input);
         let starts = matrix.find_all((0, false));
         let trailhead_sum = starts.iter()
             .map(|(start_row, start_col)| compute_trailhead(matrix.clone(), *start_row, *start_col))
@@ -16,7 +15,7 @@ impl DaySolver<u64> for Day10 {
     }
 
     fn solve_second(&self, input: &Input) -> Result<u64, Error> {
-        let mut matrix = parse_input(input);
+        let matrix = parse_input(input);
         let starts = matrix.find_all((0, false));
         let trailhead_sum = starts.iter()
             .map(|(start_row, start_col)| compute_trailhead_v2(matrix.clone(), *start_row, *start_col))
@@ -47,7 +46,7 @@ fn compute_trailhead(mut matrix: Matrix<(u8, bool)>, start_row: usize, start_col
     trailhead
 }
 
-fn compute_trailhead_v2(mut matrix: Matrix<(u8, bool)>, start_row: usize, start_col: usize) -> u64 {
+fn compute_trailhead_v2(matrix: Matrix<(u8, bool)>, start_row: usize, start_col: usize) -> u64 {
     let mut trailhead = 0;
     let mut next_node = Vec::new();
     next_node.push((start_row, start_col, 0));

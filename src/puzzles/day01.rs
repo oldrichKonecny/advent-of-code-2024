@@ -1,6 +1,5 @@
 use std::collections::HashMap;
-use std::fmt::Display;
-use anyhow::{format_err, Error};
+use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
 
 pub struct Day01;

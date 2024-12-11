@@ -1,6 +1,5 @@
 use crate::base::generic_solver::{DaySolver, Input};
 use anyhow::Error;
-use log::debug;
 
 pub struct Day09;
 
