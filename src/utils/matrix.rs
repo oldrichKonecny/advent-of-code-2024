@@ -20,6 +20,15 @@ impl <T> Matrix<T> {
         }
     }
 
+    pub fn get_cloned(&self, row: usize, col: usize) -> Option<T>
+    where T: Clone {
+        if row < self.rows_len && col < self.cols_len {
+            Some(self.data[row * self.cols_len + col].clone())
+        } else {
+            None
+        }
+    }
+
     pub fn get_info(&self, row: usize, col: usize) -> Option<NodeInfo<T>>
     where T: Clone {
         if row < self.rows_len && col < self.cols_len {
@@ -257,6 +266,29 @@ impl <T> Matrix<T> {
             }
         }
         res
+    }
+
+    pub fn get_maybe_neighbors(&self, row: usize, col: usize, directions: &[Direction]) -> Vec<Option<NodeInfo<T>>>
+    where T: Clone {
+        let mut res = Vec::new();
+        for direction in directions {
+            res.push(self.get_next_info(row, col, direction));
+        }
+        res
+    }
+
+    pub fn get_all_points(&self) -> Vec<NodeInfo<T>>
+    where T: Clone {
+        let mut res = Vec::new();
+        for row in 0..self.rows_len {
+            for col in 0..self.cols_len {
+                if let Some(info) = self.get_info(row, col) {
+                    res.push(info);
+                }
+            }
+        }
+        res
+
     }
 }
 

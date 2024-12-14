@@ -67,7 +67,3 @@ fn divide_in_middle(number: u64) -> (u64, u64) {
     let second = number % 10u64.pow(half);
     (first, second)
 }
-
-fn compute_stones_with_memoization(stone: u64, steps: usize, memoization: &mut HashMap<u64, u64>) {
-
-}
