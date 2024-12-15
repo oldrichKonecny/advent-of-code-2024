@@ -15,7 +15,7 @@ fn main() {
         .filter_level(log::LevelFilter::Trace)
         .init();
 
-    let day = DayMarker::Day12;
+    let day = DayMarker::Day13;
     solve_day(day.get_solver(), day.get_input(false));
 }
 

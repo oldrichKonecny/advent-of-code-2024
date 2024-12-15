@@ -15,6 +15,9 @@ use crate::puzzles::day10::Day10;
 use crate::puzzles::day11::Day11;
 use crate::puzzles::day12::Day12;
 use crate::puzzles::day13::Day13;
+use crate::puzzles::day14::Day14;
+use crate::puzzles::day15::Day15;
+use crate::puzzles::day16::Day16;
 
 pub enum DayMarker {
     Day01,
@@ -60,9 +63,9 @@ impl DayMarker{
             DayMarker::Day11 => Box::new(Day11),
             DayMarker::Day12 => Box::new(Day12),
             DayMarker::Day13 => Box::new(Day13),
-            DayMarker::Day14 => todo!("Not implemented yet!"),
-            DayMarker::Day15 => todo!("Not implemented yet!"),
-            DayMarker::Day16 => todo!("Not implemented yet!"),
+            DayMarker::Day14 => Box::new(Day14),
+            DayMarker::Day15 => Box::new(Day15),
+            DayMarker::Day16 => Box::new(Day16),
             DayMarker::Day17 => todo!("Not implemented yet!"),
             DayMarker::Day18 => todo!("Not implemented yet!"),
             DayMarker::Day19 => todo!("Not implemented yet!"),
