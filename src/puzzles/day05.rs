@@ -1,6 +1,6 @@
-use std::collections::HashMap;
-use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
+use anyhow::Error;
+use std::collections::HashMap;
 
 pub struct Day05;
 

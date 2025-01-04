@@ -1,5 +1,5 @@
-use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
+use anyhow::Error;
 
 pub struct Day03;
 

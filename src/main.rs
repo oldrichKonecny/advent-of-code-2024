@@ -1,9 +1,9 @@
-use std::fmt::Display;
-use std::time::Instant;
-use log::{error, info};
+extern crate pretty_env_logger;
 use crate::base::day_marker::DayMarker;
 use crate::base::generic_solver::{DaySolver, Input};
-extern crate pretty_env_logger;
+use log::{error, info};
+use std::fmt::Display;
+use std::time::Instant;
 
 mod base;
 mod puzzles;
@@ -15,7 +15,7 @@ fn main() {
         .filter_level(log::LevelFilter::Trace)
         .init();
 
-    let day = DayMarker::Day13;
+    let day = DayMarker::Day14;
     solve_day(day.get_solver(), day.get_input(false));
 }
 

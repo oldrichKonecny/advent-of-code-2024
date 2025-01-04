@@ -1,6 +1,6 @@
-use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
 use crate::utils::matrix::{Direction, Matrix};
+use anyhow::Error;
 
 pub struct Day10;
 

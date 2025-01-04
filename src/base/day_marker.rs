@@ -1,6 +1,3 @@
-use std::fs::File;
-use std::io::{Read, Write};
-use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
 use crate::puzzles::day01::Day01;
 use crate::puzzles::day02::Day02;
@@ -18,6 +15,9 @@ use crate::puzzles::day13::Day13;
 use crate::puzzles::day14::Day14;
 use crate::puzzles::day15::Day15;
 use crate::puzzles::day16::Day16;
+use anyhow::Error;
+use std::fs::File;
+use std::io::{Read, Write};
 
 pub enum DayMarker {
     Day01,

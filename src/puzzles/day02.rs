@@ -1,6 +1,6 @@
-use std::cmp::Ordering;
-use anyhow::Error;
 use crate::base::generic_solver::{DaySolver, Input};
+use anyhow::Error;
+use std::cmp::Ordering;
 
 pub struct Day02;
 
