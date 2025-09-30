@@ -48,6 +48,37 @@ pub enum DayMarker {
 }
 
 impl DayMarker{
+    pub fn from_day_number(day: u8) -> Result<DayMarker, anyhow::Error> {
+        match day {
+            1 => Ok(DayMarker::Day01),
+            2 => Ok(DayMarker::Day02),
+            3 => Ok(DayMarker::Day03),
+            4 => Ok(DayMarker::Day04),
+            5 => Ok(DayMarker::Day05),
+            6 => Ok(DayMarker::Day06),
+            7 => Ok(DayMarker::Day07),
+            8 => Ok(DayMarker::Day08),
+            9 => Ok(DayMarker::Day09),
+            10 => Ok(DayMarker::Day10),
+            11 => Ok(DayMarker::Day11),
+            12 => Ok(DayMarker::Day12),
+            13 => Ok(DayMarker::Day13),
+            14 => Ok(DayMarker::Day14),
+            15 => Ok(DayMarker::Day15),
+            16 => Ok(DayMarker::Day16),
+            17 => Ok(DayMarker::Day17),
+            18 => Ok(DayMarker::Day18),
+            19 => Ok(DayMarker::Day19),
+            20 => Ok(DayMarker::Day20),
+            21 => Ok(DayMarker::Day21),
+            22 => Ok(DayMarker::Day22),
+            23 => Ok(DayMarker::Day23),
+            24 => Ok(DayMarker::Day24),
+            25 => Ok(DayMarker::Day25),
+            _ => Err(anyhow::Error::msg(format!("Day {} is not valid (1-25)", day))),
+        }
+    }
+
     pub fn get_solver(&self) -> Box<dyn DaySolver<u64>> {
         match self {
             DayMarker::Day01 => Box::new(Day01),

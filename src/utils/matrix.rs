@@ -250,6 +250,20 @@ impl <T> Matrix<T> {
         res
     }
 
+    pub fn find_first(&self, value: T) -> Option<(usize, usize)>
+    where T: PartialEq {
+        for row in 0..self.rows_len {
+            for col in 0..self.cols_len {
+                if let Some(v) = self.get(row, col) {
+                    if *v == value {
+                        return Some((row, col));
+                    }
+                }
+            }
+        }
+        None
+    }
+
     pub fn count_all(&self, value: T) -> usize
     where T: PartialEq {
         self.data.iter()
