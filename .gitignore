@@ -1,4 +1,7 @@
 /target
 /inputs
 /.idea
+/.claude/settings.local.json
 session_secret
+.DS_Store
+flamegraph*.svg

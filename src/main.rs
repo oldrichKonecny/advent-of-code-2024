@@ -15,7 +15,7 @@ mod utils;
 #[derive(Parser, Debug)]
 #[command(version, about = "Advent of Code 2024 Solutions", long_about = None)]
 struct Args {
-    #[arg(short, long, default_value_t = 11, help = "Day to solve (1-25)")]
+    #[arg(short, long, default_value_t = 25, help = "Day to solve (1-25)")]
     day: u8,
 
     #[arg(short, long, help = "Use test input instead of real input")]

@@ -15,6 +15,15 @@ use crate::puzzles::day13::Day13;
 use crate::puzzles::day14::Day14;
 use crate::puzzles::day15::Day15;
 use crate::puzzles::day16::Day16;
+use crate::puzzles::day17::Day17;
+use crate::puzzles::day18::Day18;
+use crate::puzzles::day19::Day19;
+use crate::puzzles::day20::Day20;
+use crate::puzzles::day21::Day21;
+use crate::puzzles::day22::Day22;
+use crate::puzzles::day23::Day23;
+use crate::puzzles::day24::Day24;
+use crate::puzzles::day25::Day25;
 use anyhow::Error;
 use std::fs::File;
 use std::io::{Read, Write};
@@ -97,15 +106,15 @@ impl DayMarker{
             DayMarker::Day14 => Box::new(Day14),
             DayMarker::Day15 => Box::new(Day15),
             DayMarker::Day16 => Box::new(Day16),
-            DayMarker::Day17 => todo!("Not implemented yet!"),
-            DayMarker::Day18 => todo!("Not implemented yet!"),
-            DayMarker::Day19 => todo!("Not implemented yet!"),
-            DayMarker::Day20 => todo!("Not implemented yet!"),
-            DayMarker::Day21 => todo!("Not implemented yet!"),
-            DayMarker::Day22 => todo!("Not implemented yet!"),
-            DayMarker::Day23 => todo!("Not implemented yet!"),
-            DayMarker::Day24 => todo!("Not implemented yet!"),
-            DayMarker::Day25 => todo!("Not implemented yet!"),
+            DayMarker::Day17 => Box::new(Day17),
+            DayMarker::Day18 => Box::new(Day18),
+            DayMarker::Day19 => Box::new(Day19),
+            DayMarker::Day20 => Box::new(Day20),
+            DayMarker::Day21 => Box::new(Day21),
+            DayMarker::Day22 => Box::new(Day22),
+            DayMarker::Day23 => Box::new(Day23),
+            DayMarker::Day24 => Box::new(Day24),
+            DayMarker::Day25 => Box::new(Day25),
         }
     }
 
@@ -168,7 +177,7 @@ fn download_and_save_input(day_number: u32) -> Result<(), Error> {
     let client = reqwest::blocking::Client::new();
     let session = std::fs::read_to_string("session_secret")?;
     let response = client.get(&input_url)
-        .header("Cookie", format!("session={}", session))
+        .header("Cookie", format!("session={}", session.trim()))
         .send()?;
 
     response.text()

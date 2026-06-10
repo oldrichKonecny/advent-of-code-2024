@@ -7,7 +7,9 @@ pub struct Day11;
 
 impl DaySolver<u64> for Day11 {
     fn solve_first(&self, input: &Input) -> Result<u64, Error> {
-        let mut stones = input.input.split(" ")
+        let mut stones = input
+            .input
+            .split(" ")
             .filter(|s| !s.is_empty() && *s != "\n")
             .map(|s| s.trim().parse::<u64>().unwrap())
             .collect::<Vec<_>>();
@@ -32,7 +34,9 @@ impl DaySolver<u64> for Day11 {
     }
 
     fn solve_second(&self, input: &Input) -> Result<u64, Error> {
-        let mut memoization = input.input.split(" ")
+        let mut memoization = input
+            .input
+            .split(" ")
             .filter(|s| !s.is_empty() && *s != "\n")
             .map(|s| s.trim().parse::<u64>().unwrap())
             .fold(FxHashMap::default(), |mut acc, stone| {
@@ -41,30 +45,36 @@ impl DaySolver<u64> for Day11 {
             });
 
         for _ in 0..75 {
-            let mut new_memoization = FxHashMap::with_capacity_and_hasher(
-                memoization.len() * 2,
-                Default::default()
-            );
+            let mut new_memoization =
+                FxHashMap::with_capacity_and_hasher(memoization.len() * 2, Default::default());
             for (stone, count) in memoization.iter() {
                 if *stone == 0 {
                     match new_memoization.entry(1) {
                         Entry::Occupied(mut e) => *e.get_mut() += *count,
-                        Entry::Vacant(e) => { e.insert(*count); }
+                        Entry::Vacant(e) => {
+                            e.insert(*count);
+                        }
                     }
                 } else if (stone.ilog10() + 1) & 1 == 0 {
                     let (first, second) = divide_in_middle(*stone);
                     match new_memoization.entry(first) {
                         Entry::Occupied(mut e) => *e.get_mut() += *count,
-                        Entry::Vacant(e) => { e.insert(*count); }
+                        Entry::Vacant(e) => {
+                            e.insert(*count);
+                        }
                     }
                     match new_memoization.entry(second) {
                         Entry::Occupied(mut e) => *e.get_mut() += *count,
-                        Entry::Vacant(e) => { e.insert(*count); }
+                        Entry::Vacant(e) => {
+                            e.insert(*count);
+                        }
                     }
                 } else {
                     match new_memoization.entry(*stone * 2024) {
                         Entry::Occupied(mut e) => *e.get_mut() += *count,
-                        Entry::Vacant(e) => { e.insert(*count); }
+                        Entry::Vacant(e) => {
+                            e.insert(*count);
+                        }
                     }
                 }
             }

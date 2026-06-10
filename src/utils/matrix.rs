@@ -351,7 +351,7 @@ pub struct NodeInfo<T> {
     pub value: T,
 }
 
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq, Hash, Ord, PartialOrd)]
 pub enum Direction {
     Up,
     Down,
